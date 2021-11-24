@@ -1,0 +1,5 @@
+numpy
+PIL
+numpy
+opencv-python
+pandas
