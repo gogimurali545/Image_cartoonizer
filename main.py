@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from PIL import Image
-import matplotlib.pyplot as plt
 import cv2
 import base64
 from io import BytesIO
