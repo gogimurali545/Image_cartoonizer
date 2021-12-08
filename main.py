@@ -19,14 +19,15 @@ if uploaded_file is not None:
     # st.text(var1)
     def cartoonify(image):
         grayScaleImage = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        ReSized2 = cv2.resize(grayScaleImage, (960, 540))
+        # ReSized2 = cv2.resize(grayScaleImage, (450, 540))
 
-        return ReSized2
+        return grayScaleImage
 
     final_image = cartoonify(image_original)
+    st.image(final_image)
     final_image = Image.fromarray(final_image)
     buf = BytesIO()
-    # final_image.save(buf, format='JPEG')
+    final_image.save(buf, format='JPEG')
     # img = plt.imshow(final_image)
     
     st.download_button(label="Download gray image", data=buf.getvalue(), mime="image/png")
