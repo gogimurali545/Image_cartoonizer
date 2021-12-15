@@ -12,6 +12,7 @@ st.set_page_config(page_title="Pirates of Python", page_icon="https://cdn-icons-
 st.title("Image Cartoonizer")
 
 def cartoonify(image):
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     gray_Image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     blur_Gray_Image = cv2.medianBlur(gray_Image, 5)
     edge_Image = cv2.adaptiveThreshold(blur_Gray_Image, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 7, 7)
