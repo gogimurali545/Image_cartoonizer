@@ -48,19 +48,19 @@ if uploaded_file is not None:
 
     col2.header('Gray Image')
     col2.image(image_2)
-    col2.download_button(label="Download gray image", data=image_2_data, mime="image/png")
+    col2.download_button(label="Download Gray Image", data=image_2_data, mime="image/png")
 
-    col1.header('Image 3')
+    col1.header('Blur Gray Image')
     col1.image(image_3)
-    col1.download_button(label="Download Image 3", data=image_3_data, mime="image/png")
+    col1.download_button(label="Download Median Blur Gray Image", data=image_3_data, mime="image/png")
 
-    col2.header('Image 4')
+    col2.header('Edge Image')
     col2.image(image_4)
-    col2.download_button(label="Download Image 4", data=image_4_data, mime="image/png")
+    col2.download_button(label="Download Edge Image", data=image_4_data, mime="image/png")
 
-    col1.header('Image 5')
+    col1.header('Colored Blur Image')
     col1.image(image_5)
-    col1.download_button(label="Download Image 5", data=image_5_data, mime="image/png")
+    col1.download_button(label="Download Colored  Blur Image", data=image_5_data, mime="image/png")
 
     col2.header('Cartoonified Image')
     col2.image(cartoonified_image)
