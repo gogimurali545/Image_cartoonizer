@@ -17,13 +17,14 @@ def cartoonify(image):
     blur_Gray_Image = cv2.medianBlur(gray_Image, 5)
     edge_Image = cv2.adaptiveThreshold(blur_Gray_Image, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 7, 7)
     color_Image = cv2.bilateralFilter(image, 9, 300, 300)
+    color_Image = cv2.cvtColor(color_Image, cv2.COLOR_BGR2RGB)
     cartoonified_Image = cv2.bitwise_and(color_Image, color_Image, mask=edge_Image)
     return gray_Image, blur_Gray_Image, edge_Image, color_Image, cartoonified_Image
 
 def buffer_data(image):
     image_from_array = Image.fromarray(image)
     buf = BytesIO()
-    image_from_array.save(buf, format='JPEG')
+    image_from_array.save(buf, format='PNG')
     return image_from_array, buf.getvalue()
 
 uploaded_file = st.file_uploader("Upload an image", type=['png', 'jpeg', 'jpg'])
